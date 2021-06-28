@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "Lance Jarvis",
+        "location": "London, UK",
+        "designation": "General Manager ",
+        "avatar": "https://testimonialapi.toolcarton.com/avatar/1.jpg",
+        "message": "We have been using product for last one year, and I have to say that it has transformed the way we do business. Thank you for awesome service.",
+        "lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non fringilla leo. Phasellus dui erat, ultrices sollicitudin ante quis, convallis varius odio. Quisque sed tristique ante.",
+        "rating": 4.8,
+        "audio": "https://testimonialapi.toolcarton.com/audio/1.mp3"
+    },
+    {
+        "id": 2,
+        "name": "Juliet Wright",
+        "location": "Sweden",
+        "designation": "Technical Director",
+        "avatar": "https://testimonialapi.toolcarton.com/avatar/2.jpg",
+        "message": "It has changed the way I used the website. Product lets you create anything you envision and it does it so easy and flawless. I can't imagine not working with the service.",
+        "lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non fringilla leo. Phasellus dui erat, ultrices sollicitudin ante quis, convallis varius odio. Quisque sed tristique ante.",
+        "rating": 4.4,
+        "audio": "https://testimonialapi.toolcarton.com/audio/2.mp3"
+    }
+]
