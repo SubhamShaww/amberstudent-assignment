@@ -1,4 +1,5 @@
 import React from 'react';
+import './Avatars.scss';
 
 type Props = {
     isLoaded: boolean;
@@ -11,7 +12,14 @@ const Avatars: React.FC<Props> = ({ isLoaded, testimonials, changePerson }) => {
         <div className="avatars">
             {isLoaded &&
                 testimonials.map((person) => {
-                    return <img key={person.id} src={person.avatar} onClick={() => changePerson(person.id)} />;
+                    return (
+                        <img
+                            key={person.id}
+                            className="personimage"
+                            src={person.avatar}
+                            onClick={() => changePerson(person.id)}
+                        />
+                    );
                 })}
         </div>
     );

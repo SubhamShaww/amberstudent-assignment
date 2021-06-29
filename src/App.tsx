@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Testimonial from './components/Testimonial';
-import Avatars from './components/Avatars';
-import Buttons from './components/Buttons';
+import Testimonial from './components/testimonial/Testimonial';
+import Avatars from './components/avatars/Avatars';
+import ArrowButtons from './components/arrowbuttons/ArrowButtons';
 import './App.scss';
 
 const App: React.FC = () => {
@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
         const fetchPosts = async (): Promise<void> => {
             const url: string = useMockTestimonialData
-                ? '../mockTestimonial.json'
+                ? 'mockTestimonial.json'
                 : 'https://testimonialapi.toolcarton.com/api';
 
             const res = await fetch(url, {
@@ -27,7 +27,7 @@ const App: React.FC = () => {
             const resData = await res.json();
 
             // console.log(resData);
-            isMounted && setTestimonials(resData);
+            isMounted && setTestimonials(resData.slice(0, 7));
             isMounted && setIsLoaded(true);
         };
 
@@ -52,11 +52,13 @@ const App: React.FC = () => {
     return (
         <div className="app">
             <div className="app__body">
-                <h5>TESTIMONIALS</h5>
-                <Testimonial isLoaded={isLoaded} currentTestimonial={currentTestimonial} />
-                <div>
+                <div className="body__testimonials">
+                    <h5>TESTIMONIALS</h5>
+                    <Testimonial isLoaded={isLoaded} currentTestimonial={currentTestimonial} />
+                </div>
+                <div className="body__buttons">
                     <Avatars isLoaded={isLoaded} testimonials={testimonials} changePerson={changePerson} />
-                    <Buttons
+                    <ArrowButtons
                         currentPersonId={currentPersonId}
                         testimonials={testimonials}
                         changePerson={changePerson}

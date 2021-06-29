@@ -1,4 +1,6 @@
 import React from 'react';
+import TestimonialFooter from './testimonialFooter/TestimonialFooter';
+import './Testimonial.scss';
 
 type Props = {
     isLoaded: boolean;
@@ -8,12 +10,9 @@ type Props = {
 const Testimonial: React.FC<Props> = ({ isLoaded, currentTestimonial }) => {
     return isLoaded ? (
         <div className="testimonial">
-            <h2>{currentTestimonial[0].message}</h2>
+            <h1>{currentTestimonial[0].message}</h1>
             <p>{currentTestimonial[0].lorem}</p>
-            <div className="testimonial__footer">
-                <div className="person">{(currentTestimonial[0].name, currentTestimonial[0].designation)}</div>
-                <div className="read">READ FULL STORY</div>
-            </div>
+            <TestimonialFooter name={currentTestimonial[0].name} designation={currentTestimonial[0].designation} />
         </div>
     ) : (
         <div>

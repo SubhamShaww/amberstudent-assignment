@@ -1,0 +1,17 @@
+@import '../../sass/var';
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+
+    & > h1 {
+        margin-bottom: 2rem;
+        font-size: $testimonial-heading-font-size;
+        width: 90%;
+    }
+
+    & > p {
+        margin-bottom: 2rem;
+        font-size: $testimonial-para-font-size;
+    }
+}

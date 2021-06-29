@@ -1,0 +1,15 @@
+@import '../../sass/var';
+
+.arrowbuttons {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    grid-column-gap: 1rem;
+
+    & > .arrowicons {
+        border-radius: 50%;
+        background-color: $arrow-button-background-color;
+        cursor: pointer;
+        height: $arrow-icons-height;
+        padding: 1.5rem;
+    }
+}
