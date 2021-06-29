@@ -2,6 +2,22 @@
 
 html {
     font-size: 62.5%;
+
+    @media screen and (max-width: 1024px) {
+        font-size: 60%;
+    }
+
+    @media screen and (max-width: 991px) {
+        font-size: 58%;
+    }
+
+    @media screen and (max-width: 768px) {
+        font-size: 48%;
+    }
+
+    @media screen and (max-width: 540px) {
+        font-size: 34%;
+    }
 }
 
 * {

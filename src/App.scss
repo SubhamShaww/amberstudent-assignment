@@ -2,19 +2,19 @@
 
 .app {
     background-color: $app-background-color;
-    height: 92vh;
+    height: 100vh;
     margin: 2.5rem 0;
-    padding: 4.5rem 0 4.5rem 9.5%;
+    padding: 4rem 0 4rem 9%;
 
     & > .app__body {
+        padding: 7rem 5% 7rem 20%;
         background-color: #fff;
+        border-top-left-radius: $app-body-border-radius;
+        border-bottom-left-radius: $app-body-border-radius;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 4rem 5% 4rem 10%;
-        border-top-left-radius: 5rem;
-        border-bottom-left-radius: 5rem;
 
         & > .body__testimonials > h5 {
             font-size: $app-heading-font-size;
@@ -23,6 +23,7 @@
 
         & > .body__buttons {
             display: flex;
+            flex-wrap: wrap;
         }
     }
 }

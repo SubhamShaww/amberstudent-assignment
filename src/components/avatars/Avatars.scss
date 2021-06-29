@@ -3,8 +3,8 @@
 .avatars {
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(7, min-content);
-    grid-column-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, $avatar-height);
+    grid-column-gap: 1.5rem;
 
     & > .personimage {
         height: $avatar-height;
