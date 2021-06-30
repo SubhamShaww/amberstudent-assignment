@@ -3,11 +3,12 @@ import './Avatars.scss';
 
 type Props = {
     isLoaded: boolean;
+    currentTestimonial: Testimonial;
     testimonials: Testimonial[];
     changePerson: ChangePersonFunctionType;
 };
 
-const Avatars: React.FC<Props> = ({ isLoaded, testimonials, changePerson }) => {
+const Avatars: React.FC<Props> = ({ isLoaded, currentTestimonial, testimonials, changePerson }) => {
     return (
         <div className="avatars">
             {isLoaded &&
@@ -15,7 +16,7 @@ const Avatars: React.FC<Props> = ({ isLoaded, testimonials, changePerson }) => {
                     return (
                         <img
                             key={person.id}
-                            className="personimage"
+                            className={`avatar__image ${currentTestimonial.id === person.id && 'avatar__active'}`}
                             src={person.avatar}
                             onClick={() => changePerson(person.id)}
                         />

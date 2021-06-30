@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Testimonial from './components/testimonial/Testimonial';
+import Testimonials from './components/testimonials/Testimonials';
 import Avatars from './components/avatars/Avatars';
 import ArrowButtons from './components/arrowbuttons/ArrowButtons';
 import './App.scss';
@@ -27,8 +27,12 @@ const App: React.FC = () => {
             const resData = await res.json();
 
             // console.log(resData);
-            isMounted && setTestimonials(resData.slice(0, 7));
-            isMounted && setIsLoaded(true);
+            if (!Array.isArray(resData) || resData.length <= 0) {
+                alert('Please reload again. Got Invalid data from server.');
+            } else {
+                isMounted && setTestimonials(resData.slice(0, 7));
+                isMounted && setIsLoaded(true);
+            }
         };
 
         fetchPosts();
@@ -41,9 +45,9 @@ const App: React.FC = () => {
     }, []);
 
     // get current testimonial
-    const indexOfLastTestimonial = currentPersonId * TestimonialsPerPage;
-    const indexOfFirstTestimonial = indexOfLastTestimonial - TestimonialsPerPage;
-    const currentTestimonial = testimonials.slice(indexOfFirstTestimonial, indexOfLastTestimonial);
+    const indexOfLastTestimonial: number = currentPersonId * TestimonialsPerPage;
+    const indexOfFirstTestimonial: number = indexOfLastTestimonial - TestimonialsPerPage;
+    const currentTestimonial: Testimonial = testimonials.slice(indexOfFirstTestimonial, indexOfLastTestimonial)[0];
 
     const changePerson: ChangePersonFunctionType = (personId: number) => {
         setCurrentPersonId(personId);
@@ -54,10 +58,19 @@ const App: React.FC = () => {
             <div className="app__body">
                 <div className="body__testimonials">
                     <h5>TESTIMONIALS</h5>
-                    <Testimonial isLoaded={isLoaded} currentTestimonial={currentTestimonial} />
+                    <Testimonials
+                        isLoaded={isLoaded}
+                        currentTestimonial={currentTestimonial}
+                        testimonials={testimonials}
+                    />
                 </div>
                 <div className="body__buttons">
-                    <Avatars isLoaded={isLoaded} testimonials={testimonials} changePerson={changePerson} />
+                    <Avatars
+                        isLoaded={isLoaded}
+                        currentTestimonial={currentTestimonial}
+                        testimonials={testimonials}
+                        changePerson={changePerson}
+                    />
                     <ArrowButtons
                         currentPersonId={currentPersonId}
                         testimonials={testimonials}

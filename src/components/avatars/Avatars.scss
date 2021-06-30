@@ -4,16 +4,17 @@
     flex: 1;
     display: grid;
     grid-template-columns: repeat(auto-fit, $avatar-height);
-    grid-column-gap: 1.5rem;
+    column-gap: 1.5rem;
 
-    & > .personimage {
+    & > .avatar__image {
         height: $avatar-height;
         cursor: pointer;
         border-radius: 50%;
         padding: 0.4rem;
+        user-select: none;
     }
 
-    & > .personimage:hover {
+    & > .avatar__active {
         box-shadow: 0 0 0 0.4rem $avatars-outline-color;
     }
 }

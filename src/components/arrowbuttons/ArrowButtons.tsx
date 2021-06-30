@@ -13,12 +13,12 @@ const ArrowButtons: React.FC<Props> = ({ currentPersonId, testimonials, changePe
         <div className="arrowbuttons">
             <ArrowLeftIcon
                 className="arrowicons"
-                onClick={() => currentPersonId > 1 && changePerson(currentPersonId - 1)}
+                onClick={() => changePerson(currentPersonId > 1 ? currentPersonId - 1 : testimonials.length)}
             />
 
             <ArrowRightIcon
                 className="arrowicons"
-                onClick={() => currentPersonId < testimonials.length && changePerson(currentPersonId + 1)}
+                onClick={() => changePerson(currentPersonId < testimonials.length ? currentPersonId + 1 : 1)}
             />
         </div>
     );
