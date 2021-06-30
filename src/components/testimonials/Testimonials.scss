@@ -4,18 +4,18 @@
     & > .testimonials__matched {
         display: grid;
         grid-template-columns: repeat(2, 100%);
-        column-gap: 3rem;
+        column-gap: 3%;
 
         & > .swipeleft {
             animation-name: swipeleft;
-            animation-duration: 2s;
+            animation-duration: 0.3s;
             animation-timing-function: ease-out;
-            transform: translateX(-100%);
+            transform: translateX(-103%);
         }
 
         & > .swiperight {
             animation-name: swiperight;
-            animation-duration: 2s;
+            animation-duration: 0.3s;
             animation-timing-function: ease-out;
         }
     }
@@ -25,7 +25,7 @@
             transform: translateX(0%);
         }
         to {
-            transform: translateX(-100%);
+            transform: translateX(-103%);
         }
     }
 

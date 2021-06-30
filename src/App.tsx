@@ -9,6 +9,10 @@ const App: React.FC = () => {
     const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
     const [currentPersonId, setCurrentPersonId] = useState<number>(1);
     const TestimonialsPerPage: number = 1;
+
+    // swipeDirection should have value 'swipeleft' or 'swiperight' only. Its default value is none which will not trigger any swipe animation during page load.
+    const [swipeDirection, setSwipeDirection] = useState<string>('none');
+
     const useMockTestimonialData: boolean = false;
 
     useEffect(() => {
@@ -51,6 +55,18 @@ const App: React.FC = () => {
 
     const changePerson: ChangePersonFunctionType = (personId: number) => {
         setCurrentPersonId(personId);
+        personId !== currentPersonId &&
+            setSwipeDirection(() => {
+                if (personId === 1 && currentPersonId === 7) {
+                    return 'swipeleft';
+                }
+
+                if (personId === 7 && currentPersonId === 1) {
+                    return 'swiperight';
+                }
+
+                return personId < currentPersonId ? 'swiperight' : 'swipeleft';
+            });
     };
 
     return (
@@ -60,6 +76,7 @@ const App: React.FC = () => {
                     <h5>TESTIMONIALS</h5>
                     <Testimonials
                         isLoaded={isLoaded}
+                        swipeDirection={swipeDirection}
                         currentTestimonial={currentTestimonial}
                         testimonials={testimonials}
                     />

@@ -4,14 +4,12 @@ import './Testimonials.scss';
 
 type Props = {
     isLoaded: boolean;
+    swipeDirection: string;
     currentTestimonial: Testimonial;
     testimonials: Testimonial[];
 };
 
-const Testimonials: React.FC<Props> = ({ isLoaded, currentTestimonial, testimonials }) => {
-    // swipeDirection should have value 'swipeleft' or 'swiperight' only.
-    const swipeDirection: string = 'swiperight';
-
+const Testimonials: React.FC<Props> = ({ isLoaded, swipeDirection, currentTestimonial, testimonials }) => {
     const testimonialPropForSwipeLeft = (index: number, position: number): Testimonial => {
         // position should have value either 0 or 1
         // i.e 0 for first and 1 for second.
