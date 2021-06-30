@@ -1,17 +1,13 @@
 @import '../../sass/var';
+@import '../../sass/mixin';
 
 .avatars {
     flex: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, $avatar-height);
-    column-gap: 1.5rem;
+    @include grid-setup-code(auto-fit, $avatar-height, 1.5rem);
 
     & > .avatar__image {
-        height: $avatar-height;
-        cursor: pointer;
-        border-radius: 50%;
+        @include common-buttons-code($avatar-height);
         padding: 0.4rem;
-        user-select: none;
     }
 
     & > .avatar__active {

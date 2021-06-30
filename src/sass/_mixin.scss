@@ -1,0 +1,46 @@
+@mixin flex-setup-code($justify-content, $flex-direction: row) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+}
+
+@mixin grid-setup-code($no-of-col, $height, $column-gap) {
+    display: grid;
+    grid-template-columns: repeat($no-of-col, $height);
+    column-gap: $column-gap;
+}
+
+@mixin common-buttons-code($button-height) {
+    height: $button-height;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+}
+
+@mixin common-animation-code($name, $duration, $timing-func) {
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-timing-function: $timing-func;
+}
+
+@mixin swipeleft-keyframes {
+    @keyframes swipeleft {
+        from {
+            transform: translateX(0%);
+        }
+        to {
+            transform: translateX(-103%);
+        }
+    }
+}
+
+@mixin swiperight-keyframes {
+    @keyframes swiperight {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(0%);
+        }
+    }
+}

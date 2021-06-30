@@ -1,40 +1,22 @@
+@import '../../sass/mixin';
+
 .testimonials {
     overflow: hidden;
 
     & > .testimonials__matched {
-        display: grid;
-        grid-template-columns: repeat(2, 100%);
-        column-gap: 3%;
+        @include grid-setup-code(2, 100%, 3%);
 
         & > .swipeleft {
-            animation-name: swipeleft;
-            animation-duration: 0.3s;
-            animation-timing-function: ease-out;
+            @include common-animation-code(swipeleft, 0.3s, ease-out);
             transform: translateX(-103%);
         }
 
         & > .swiperight {
-            animation-name: swiperight;
-            animation-duration: 0.3s;
-            animation-timing-function: ease-out;
+            @include common-animation-code(swiperight, 0.3s, ease-out);
         }
     }
 
-    @keyframes swipeleft {
-        from {
-            transform: translateX(0%);
-        }
-        to {
-            transform: translateX(-103%);
-        }
-    }
+    @include swipeleft-keyframes;
 
-    @keyframes swiperight {
-        from {
-            transform: translateX(-100%);
-        }
-        to {
-            transform: translateX(0%);
-        }
-    }
+    @include swiperight-keyframes;
 }

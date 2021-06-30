@@ -1,4 +1,5 @@
 @import './sass/var';
+@import './sass/mixin';
 
 .app {
     background-color: $app-background-color;
@@ -7,14 +8,13 @@
     padding: 4rem 0 4rem 9%;
 
     & > .app__body {
-        padding: 7rem 5% 7rem 20%;
         background-color: #fff;
+        height: 100%;
+        padding: 7rem 5% 7rem 20%;
         border-top-left-radius: $app-body-border-radius;
         border-bottom-left-radius: $app-body-border-radius;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+
+        @include flex-setup-code(space-between, column);
 
         & > .body__testimonials > h5 {
             font-size: $app-heading-font-size;

@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Amberstudent Project Assignment
+
+This project is made for submission of assignments for Amberstudent.
+
+## features
+
+1. Responsive.
+
+2. Carousal Feature with animation.
+
+3. Testimonials of different People with slider feature along with their image.
+
 ## Available Scripts
 
 In the project directory, you can run:

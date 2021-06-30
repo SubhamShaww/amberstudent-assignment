@@ -1,16 +1,12 @@
 @import '../../sass/var';
+@import '../../sass/mixin';
 
 .arrowbuttons {
-    display: grid;
-    grid-template-columns: repeat(2, $arrow-icons-height);
-    column-gap: 1rem;
+    @include grid-setup-code(2, $arrow-icons-height, 1rem);
 
     & > .arrowicons {
-        border-radius: 50%;
+        @include common-buttons-code($arrow-icons-height);
         background-color: $arrow-button-background-color;
-        cursor: pointer;
-        height: $arrow-icons-height;
         padding: 1.5rem;
-        user-select: none;
     }
 }
